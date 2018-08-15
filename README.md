@@ -5,7 +5,9 @@ The app will store every burger in a database, whether devoured or not.
 
 ## Technologies Used ##
 -Handlebars.js
+
 -Express.js
+
 -MySQL
 
 -Node.js
