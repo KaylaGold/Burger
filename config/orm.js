@@ -1,12 +1,7 @@
 // Import MySQL connection.
 let connection = require("./config/connection.js");
 
-// Helper function for SQL syntax. Will execute the necessary MySQL 
-//commands in the controllers. These are the methods to retrieve and store data in the database.
-// Let's say we want to pass 3 values into the mySQL query.
-// In order to write the query, we need 3 question marks.
-// The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
-// ["?", "?", "?"].toString() => "?,?,?";
+// SQL statement functions
 function printQuestionMarks(num) {
     let arr = [];
 
