@@ -10,25 +10,20 @@ let burger = {
     },
 
     //The variables cols and vals are arrays.
-    create: function (cols, vals, cd) {
-        orm.create("burgers", cols, vals, function (res) {
+    create: function (name, cb) {
+        orm.create("burgers", ["burger_name", "devoured"], [name, false], cb); 
             cb(res);
-        });
+   
     },
 
-    update: function (objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function (res) {
-            cb(res);
-        });
-    },
-
-    delete: function (condition, cb) {
-        orm.delete("burgers", condition, function (res) {
-            cb(res);
-        });
-    }
-
+    update: function (id, cb) {
+       let condition = "id=" + id;
+    orm.update("burgers", {
+      devoured: true
+    }, condition, cb);
+  }
 };
 
+   
 // Export the database functions for the controller (burgers_controller.js).
 module.exports = burger;
