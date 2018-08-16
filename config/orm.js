@@ -1,5 +1,5 @@
 // Import MySQL connection.
-let connection = require("../config/connection.js");
+let connection = require("./config/connection.js");
 
 // Helper function for SQL syntax. Will execute the necessary MySQL 
 //commands in the controllers. These are the methods to retrieve and store data in the database.
@@ -8,9 +8,9 @@ let connection = require("../config/connection.js");
 // The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
 // ["?", "?", "?"].toString() => "?,?,?";
 function printQuestionMarks(num) {
-    var arr = [];
+    let arr = [];
 
-    for (var i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) {
         arr.push("?");
     }
 
@@ -19,11 +19,11 @@ function printQuestionMarks(num) {
 
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
-    var arr = [];
+    let arr = [];
 
     // loop through the keys and push the key/value as a string int arr
-    for (var key in ob) {
-        var value = ob[key];
+    for (let key in ob) {
+        let value = ob[key];
         // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
             // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
@@ -41,9 +41,9 @@ function objToSql(ob) {
 }
 
 // Object for all our SQL statement functions.
-var orm = {
+let orm = {
     all: function (tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
+        let queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -52,7 +52,7 @@ var orm = {
         });
     },
     create: function (table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
+        let queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -73,7 +73,7 @@ var orm = {
     },
     // An example of objColVals would be {name: panther, sleepy: true}
     update: function (table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
+        let queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -90,7 +90,7 @@ var orm = {
         });
     },
     delete: function (table, condition, cb) {
-        var queryString = "DELETE FROM " + table;
+        let queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
 
