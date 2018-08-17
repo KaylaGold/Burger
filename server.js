@@ -1,7 +1,7 @@
 //Dependencies
 let express = require("express");
 let bodyParser = require("body-parser");
-let methodOverride = require('method-override');
+// let methodOverride = require('method-override');
 
 //Set up Express
 let app = express();
@@ -12,7 +12,7 @@ app.use(express.static(__dirname + "/public"));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(methodOverride("_method"));
+// app.use(methodOverride("_method"));
 
 // parse application/json
 app.use(bodyParser.json());
