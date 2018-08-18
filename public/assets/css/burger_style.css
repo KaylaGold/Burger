@@ -1,7 +1,7 @@
 body {
     width: 99%;
     height: 900px;
-    background-image: url('./public/assets/images/toppings.jpg');
+    background-color: #fc6;
   }
   #top {
     margin-top: 28px;
