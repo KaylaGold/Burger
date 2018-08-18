@@ -25,15 +25,6 @@ let burger = {
         });
       },
     
-
-//     update: function (id, cb) {
-//     let condition = "id=" + id;
-//     orm.update("burgers", {
-//       devoured: true
-//     }, condition, cb, function(res){
-//         cb(res);
-//     });
-//   },
 };
 
    

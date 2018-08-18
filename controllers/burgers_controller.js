@@ -8,9 +8,7 @@ let burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 // Get all burgers in burger database and render on page.
-// router.get("/", function(req, res) {
-//   res.redirect("/burgers");
-// });
+
 
 router.get("/", function(req, res) {
   burger.all(function(data) {
